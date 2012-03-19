@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SortTable Demo</title>
+<style type="text/css">
+
+table{
+	width:600px;
+}
+thead{
+	cursor:pointer;
+	font-weight:700;
+}
+td{
+	border:solid 1px red;
+}
+colgroup{
+	background-color:#eee;
+	width:180px;
+}
+</style>
+</head>
+
+<body>
+	<h2>SortTable</h2>
+	<h3>点击表头，表格会重新排序</h3>
+	<table>
+		<colgroup span="1"></colgroup>
+		<thead>
+			<tr>
+				<td id="td0">按数字排序</td>
+				<td id="td1">按字母排序</td>
+			</tr>
+		</thead>
+		<tbody id="tbody0">
+			<tr>
+				<td>10元</td>
+				<td>zadfasfaa<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>33.3元</td>
+				<td>wwwwwwwww<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>2元</td>
+				<td>ccccccccccccc<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>545元</td>
+				<td>rrrrrrrr<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>7元</td>
+				<td>yyyyyyyyy<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>180元</td>
+				<td>jjjjjjjjjj<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>45元</td>
+				<td>wxxxwwwwwww<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>100元</td>
+				<td>zadfasfas<span>a</span>s</td>
+			</tr>
+			<tr>
+				<td>33.2元</td>
+				<td>xxwwwwwwwww<span>a</span>s</td>
+			</tr>
+	
+		</tbody>
+	</table>
+
+</body>
+<script src="../../lib/common.plugin.js"></script>
+
+<script>
+
+var tbody=document.getElementById("tbody0");
+var btn=document.getElementById("td0");
+var btn2=document.getElementById("td1");
+
+var isReverse=true;
+btn.onclick=function(){
+	isReverse=!isReverse
+	stb.sort(isReverse);
+};
+btn2.onclick=function(){
+	isReverse=!isReverse
+	stb2.sort(isReverse);
+};
+
+var stb=new SortTable(tbody,0);
+var stb2=new SortTable(tbody,1,1)
+
+</script>
+</html>

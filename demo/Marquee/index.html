@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Marquee</title>
+<style type="text/css">
+.left_arrow {
+	position: absolute;
+	width: 20px;
+	height: 89px;
+	background-image: url('common/img/sdpoint_board_tabs_arrow.png');
+	background-position: 0px 0px;
+}
+a {
+	text-decoration: none;
+	color: #0088ff;
+}
+.right_arrow {
+	position: absolute;
+	width: 20px;
+	height: 89px;
+	background-image: url('common/img/sdpoint_board_tabs_arrow.png');
+	background-position: -80px 0px;
+}
+.sdpoint_board_tabs_table td {
+	text-align: center;
+}
+.sdpoint_board_tabs_table .selected {
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+}
+.sdpoint_board_tabs_table .selected {
+	height: 88px;
+	width: 84px;
+	margin: auto;
+	_margin: auto;
+	background-color: white;
+	background-image: url('common/img/sdpoint_board_tabs_selected.png');
+	background-repeat: no-repeat;
+	background-position: center -1px;
+}
+.sdpoint_board_tabs_table td a {
+	color: #666;
+	display: block;
+	height: 87px;
+	width: 84px;
+	cursor: pointer;
+}
+.icon48_wallet_about {
+	background-image: url('common/img/icon48_wallet_about.png');
+}
+.icon48_wallet_about {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+img {
+	border: 0px;
+	vertical-align: middle;
+}
+.icon48_recharge {
+	background-image: url('common/img/icon48_recharge.png');
+}
+.icon48_recharge {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_sdpoint {
+	background-image: url('common/img/icon48_sdpoint.png');
+}
+.icon48_sdpoint {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_game {
+	background-image: url('common/img/icon48_game.png');
+}
+.icon48_game {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_bambook {
+	width: 83px;
+	height: 50px;
+	background-image: url('common/img/icon50_bambook.png');
+}
+.icon48_bambook {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_movie {
+	background-image: url('common/img/icon48_movie.png');
+}
+.icon48_movie {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_activity {
+	background-image: url('common/img/icon48_activity.png');
+}
+.icon48_activity {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+.icon48_creditcard {
+	background-image: url('common/img/icon48_creditcard.png');
+}
+.icon48_creditcard {
+	margin: 14px 0px 6px 0px;
+	width: 48px;
+	height: 48px;
+}
+</style>
+<script type="text/javascript" src="../../common/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../lib/all.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+var auto_roll01;
+window.onload = function(){
+	auto_roll01= new Marquee();
+	auto_roll01.loop=true;
+	auto_roll01.init(10,1,84,document.getElementById('aa'),1000);
+	auto_roll01.auto_play("left");
+	
+	
+	auto_roll02 = new Marquee();
+	auto_roll02.loop = true;
+	auto_roll02.direction = "y";
+	auto_roll02.init(50, 3, 14, document.getElementById('bb'), 2000);
+	auto_roll02.auto_play("right");
+
+	
+	
+}; 
+function roll_pre(){
+	auto_roll01.roll_left();
+}
+function roll_next(){
+	auto_roll01.roll_right();
+}
+</script>
+<h2>Marquee</h2>
+<div class="" style="width: 672px; margin-left: 19px; overflow: hidden;">
+	<a class="left_arrow" style="margin-left: -19px; margin-top: -1px;" onclick="roll_pre()" href="javascript:">&nbsp;</a>
+	<a class="right_arrow" style="margin-left: 671px; margin-top: -1px;" onclick="roll_next()" href="javascript:">&nbsp;</a>
+	<table id="aa" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+			<table class="sdpoint_board_tabs_table" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+					<a id="wallet_tab_aboutwallet" onclick="show_content('wallet_tab_content_aboutwallet',this)" class="selected" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_wallet_about" /><br />
+					了解钱包</a></td>
+					<td>
+					<a id="wallet_tab_recharge" onclick="show_content('wallet_tab_content_recharge',this, '0')" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_recharge" /><br />
+					充值钱包</a></td>
+					<td>
+					<a id="wallet_tab_buypoint" onclick="show_content('wallet_tab_content_buypoint',this, '1')" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_sdpoint" /><br />
+					买盛大点券</a></td>
+					<td>
+					<a id="wallet_tab_buypoint" onclick="show_content('wallet_tab_content_buypoint',this, '1')" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_sdpoint" /><br />
+					买盛大点券</a></td>
+					<td>
+					<a id="wallet_tab_buygame" onclick="show_content('wallet_tab_content_buygame',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_game" /><br />
+					买娱乐产品</a></td>
+					<td>
+					<a id="wallet_tab_bambook" onclick="show_content('wallet_tab_content_bambook',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_bambook" /><br />
+					买Bambook</a></td>
+					<td>
+					<a id="wallet_tab_movie" onclick="show_content('wallet_tab_content_movie',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_movie" /><br />
+					买电影票</a></td>
+					<td>
+					<a id="wallet_tab_hotactivity" onclick="show_content('wallet_tab_content_hotactivity',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_activity" /><br />
+					热门活动</a></td>
+					<td>
+					<a id="wallet_tab_creditcard" onclick="show_content('wallet_tab_content_creditcard',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_creditcard" /><br />
+					信用卡还款</a></td>
+
+					<td>
+					<a id="wallet_tab_movie" onclick="show_content('wallet_tab_content_movie',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_movie" /><br />
+					买电影票</a></td>
+					<td>
+					<a id="wallet_tab_hotactivity" onclick="show_content('wallet_tab_content_hotactivity',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_activity" /><br />
+					热门活动</a></td>
+					<td>
+					<a id="wallet_tab_creditcard" onclick="show_content('wallet_tab_content_creditcard',this)" class="" style="cursor: pointer" href="javascript:void(0)">
+					<img alt="" src="common/img/blank.png" class="icon48_creditcard" /><br />
+					信用卡还款</a></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="bubble_announce" id="bubble_announce" style=" border: #ff9a35 1px solid;  padding-top: 5px; padding-left:5px; padding-bottom: 4px; width: 550px;background-color: #fff9d9; font-size:12px;">
+	<div class="bubble_announce" id="bubble_announce" style="DISPLAY: block" oldblock="block">
+		<div class="bubble_content">
+			<div style="OVERFLOW: hidden; HEIGHT: 14px">
+				<table id="bb" style="MARGIN-TOP: -56px" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+						<table class="roll_table" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+								<div class="roll_item">
+									光大银行一点充近期进行系统维护，届时会影响一点充绑定服务，恢复时间敬请关注公告。</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									因系统升级，农业银行的上海地区暂无法使用银联快捷支付。</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									手机充值开通联通号段，固定电话支持全国啦！</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									圈圈充值增加“你提我改”功能啦！</div>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table class="roll_table" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+								<div class="roll_item">
+									光大银行一点充近期进行系统维护，届时会影响一点充绑定服务，恢复时间敬请关注公告。</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									因系统升级，农业银行的上海地区暂无法使用银联快捷支付。</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									手机充值开通联通号段，固定电话支持全国啦！</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<div class="roll_item">
+									圈圈充值增加“你提我改”功能啦！</div>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>tree_node</title>
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/all.js"></script>
+<script src="../../projectsCollection/netbar.js"></script>
+
+<style>
+body{font-family:宋体;line-height:1.8;}
+ul,li{list-style:none;font-size:12px;}
+.btn_box{margin-top:20px;}
+
+.upload_input{width:314px;height:22px;}
+.detail_textarea{width:409px;height:89px;}
+.ml_wrap h3{margin:0;color:#999;font-size:12px; height:20px;}
+.ml_wrap ul{margin:0;padding-left:12px;}
+.ml_wrap li{ line-height:20px;_height:20px;}
+.ml_wrap li ul{ display:none;padding-left:30px;}
+.wrap {display:inline-block;height:10px;width:10px;background:url(+.png) no-repeat center center;cursor:pointer;margin:0 2px;}
+.unwrap {display:inline-block;height:10px;width:10px;background:url(-.png) no-repeat center center;cursor:pointer;margin:0 2px;}
+li.expanded ul{display:block;}
+.focused {background-color:#316AC5;color:#FFF;}
+.parent_node,.root_node{cursor:pointer;}
+.child_node{cursor:pointer;}
+</style>
+</head>
+<body>
+		<div class="demo">
+		<h2>tree_node</h2>
+				<div id="node_tree_box" class="ml_wrap">
+                	<h3><span class="root_node">其他</span></h3>
+                    <ul>
+                    	<li>
+							<span class="wrap"></span><span class="parent_node">电话卡</span>
+							<ul>
+								<li><span class="child_node">中国移动</span></li>
+								<li><span class="child_node">中国联通</span></li>
+							</ul>
+						</li>
+                        <li><span class="wrap"></span><span class="parent_node">超市卡</span></li>
+                        <li><span class="wrap"></span><span class="parent_node">杀毒软件充值卡</span></li>
+                        <li><span class="wrap"></span><span class="parent_node">网络电话卡</span></li>
+                        <li><span class="wrap"></span><span class="parent_node">IP电话卡</span></li>
+                        <li><span class="wrap"></span><span class="parent_node">旅游景点门票</span></li>
+						<li><span class="wrap"></span><span class="parent_node">学习教育卡</span></li>
+						<li><span class="wrap"></span><span class="parent_node">娱乐影视卡</span></li>
+                    </ul>
+                </div>
+				<div class="btn_box">
+					<input value="添加目录" id="btn_new_node" type="button">
+					<input value="编辑目录" id="btn_edit_node" type="button">
+					<input value="删除目录" id="btn_del_node" type="button">
+				</div>
+		</div>
+</body>
+</html>

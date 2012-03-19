@@ -1,0 +1,35 @@
+﻿.menu_container{
+	background-color:#BFDBFF;
+	height:28px;
+}
+.base_item {
+	cursor:pointer;
+	float:left;
+	padding:2px 8px;
+}
+.child_container{
+
+	background-color:#F6F6F6;
+	border:solid 1px #6593CF;
+	margin-top:-22px;
+	margin-left:154px;
+	position:absolute;
+	width:180px;
+}
+.menu_div{
+	margin-left:-154px;
+	margin-top:22px;
+	position:absolute;
+}	
+.child_item{
+	border:solid 1px #c0c0c0;
+	margin:2px;
+	padding-left:24px;
+	zoom:1;/*必须的*/
+}
+.has_child{
+	background:url(hasChild.gif) no-repeat 155px center;
+}
+.mouse_over{
+	background-color:#FFE7A2;
+}

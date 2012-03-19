@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ellipsis</title>
+<meta name="content-type" content="text/html; charset=utf-8" />
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/all.js"></script>
+<style>
+	.ruler{
+		background:url(../../common/img/ruler.jpg?t=00) no-repeat 0 0;
+		height:100px;
+	}
+	span{
+		background-color:#eaeaea;
+	}
+</style>
+</head>
+
+<body>
+	<h2>ellipsis</h2>
+	<div class="demo">
+		
+		<div class="ruler"></div>
+		<div><span id="test" title="看看这里，超出限制宽度的文字是不是被省略了？">看看这里，超出限制宽度的文字是不是被省略了？</span></div>
+		<p>限制宽度(px)：<input type="text" id="txt" autocomplete="off" /> <input type="button" value="确 定" onclick="test()" /></p>
+	</div>
+	<script>
+		var t=$("#txt").inputNumber();
+		var cache=$("#test").clone(1);
+		function test(){
+			$("#test").replaceWith(cache);
+			cache=$("#test").clone(1);
+			$("#test").ellipsis(t.val());
+		}
+		
+	</script>
+</body>
+</html>

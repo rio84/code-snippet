@@ -1,0 +1,2 @@
+﻿Math.rnd=function(min,max){ return min+this.round(this.random()*(max-min))};
+Math.rnd=function(min,max){ return min+this.floor(this.random()*(max-min+1))};

@@ -1,0 +1,22 @@
+.Wdate{
+
+	/*background:#fff url(datePicker.gif) no-repeat right;*/
+	
+	padding-right:18px;
+	height:16px;
+	vertical-align:middle;
+	width:140px;
+}
+.Wdate2{
+	background: url(datePicker.gif) no-repeat right;
+	display:inline-block;
+	height:16px;
+	margin-left:-18px;
+	margin-right:2px;
+	vertical-align:middle;
+	width:16px;
+}
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

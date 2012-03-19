@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>draggable</title>
+<meta name="content-type" content="text/html; charset=utf-8">
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/all.js"></script>
+<style>
+	html,body{margin:0;padding:0;}
+	#container{
+		border:solid 1px #Ccc;
+		height:500px;
+		position:relative;
+	}
+	#box{
+		border:solid 1px #cddada;
+		height:200px;
+		position:absolute;
+		width:200px;
+	}
+</style>
+</head>
+
+<body>
+	<h2>draggable</h2>
+	<div id="container">
+		<div id="box">
+			这个DIV可以改变位置
+		</div>
+	</div>
+
+	<script>
+		$("#box").draggable();
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Matrix</title>
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/all.js"></script>
+<script src="../../projectsCollection/netbar.js"></script>
+<style>
+.matrix{text-align:center;}
+.matrix table{margin:0 auto;}
+.matrix_inputs{background-color:#FFF;border:solid 1px #7F9DB9;text-align:center;width:24px;}
+.matrix_inputs.error{background-color:#EEEDD8;}
+</style>
+</head>
+<body>
+	<div class="demo">
+		<h2>Matrix</h2>
+		<div id="matrix"></div>
+	</div>
+	<script>
+	var Table={
+		
+		theads:["","A","B","C","D","E","F","G","H"],
+		throws:[1,2,3,4,5,6,7,8]
+	}
+	document.getElementById("matrix").appendChild(matrix(Table));
+
+	</script>
+
+</body>
+</html>

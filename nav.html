@@ -1,0 +1,27 @@
+﻿<script>
+var Nav=[
+	{txt:"Home",href:""},
+	{txt:"API",href:"api.html"},
+	{txt:"Document",href:"doc.html"},
+	{txt:"Demo",href:"demo/"},
+	
+];
+var prefix="";
+(function(c){
+
+	var s='';
+	s+='<div class="nav"><ul>';
+
+	for(var i in Nav){
+		s+='<li><a href="'+prefix+Nav[i].href+'">'+Nav[i].txt+'</a></li>'
+	}
+
+	s+='</ul></div>';
+
+	document.write(s);
+
+
+})();
+
+</script>
+

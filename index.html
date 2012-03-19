@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS库首页</title>
+
+<link rel="stylesheet" type="text/css" href="common/css/style.css" />
+<script src="common/js/jquery-1.4.2.min.js"></script>
+<script src="lib/all.js"></script>
+</head>
+<body>
+<style>
+.doc{
+	padding:0 30px;
+}
+.doc h1{
+	text-align:center;
+}
+.doc p{
+	text-indent:30px;
+}
+
+.version_list{text-align:center;}
+th{font-family:Arial;}
+td{font-size:12px;}
+</style>
+	<div class="page">
+		<script>$.ajax({url:"nav.html",async:false,success:function(res){document.write(res);}});</script>
+		<div class="page_body">
+			<table class="main" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="600">
+							<h3>最新发布</h3>
+							<div>
+								<table id="versionTable" class="version_list" width="100%">
+									<thead>
+										<th>name</th>
+										<th>version</th>
+										<th>date</th>
+										<th>lastest editor</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td><a href="#">common.plugin</a></td>
+											<td>1.0</td>
+											<td>2010.11.5</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td><a href="#">jquery.plugin</a></td>
+											<td>1.0</td>
+											<td>2010.11.5</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td><a href="#">devtool</a></td>
+											<td>1.0</td>
+											<td>2010.11.5</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td><a href="#">tool</a></td>
+											<td>1.0</td>
+											<td>2010.12.2</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td><a href="#">validate</a></td>
+											<td>1.0</td>
+											<td>2010.11.5</td>
+											<td>wurui</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h3>更新日志</h3>
+							<div>
+								<table id="logTable" class="version_list" width="100%">
+									<thead>
+										<th>date</th>
+										<th>description</th>
+										<th>lastest editor</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2010.12.30</td>
+											<td>标签切换的控件"Tab"</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td>2010.12.22</td>
+											<td>广告轮播控件"AdSlider"</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td>2010.12.22</td>
+											<td>tool新增几个方法</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td>2010.12.3</td>
+											<td>多级菜单"Menu"开发全部完成</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td>2010.12.2</td>
+											<td>多级菜单"Menu"开发基本完成</td>
+											<td>wurui</td>
+										</tr>
+										<tr>
+											<td>2010.12.2</td>
+											<td>tool新增多个方法</td>
+											<td>wurui</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td>
+							<div style="float:right;width:220px;" id="downloadList" >
+								<h3>下载</h3>
+								<form action="download/downloadhandler.php" target="downUrl" onsubmit="submitDownload(this)" method="GET">
+									<div id="tempDiv"></div>
+									<p><input type="submit" value="下载所选" /></p>
+								</form>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		
+	</div>
+<iframe name="downUrl" style="display:none;"></iframe>
+</body>
+<script>
+//表格第一列左对齐
+var tbl=document.getElementById("versionTable");
+var rows=tbl.tBodies[0].rows;
+for(var i=0;i<rows.length;i++){
+	rows[i].cells[0].style.textAlign="left";
+}
+
+var tbl2=document.getElementById("logTable");
+var rows=tbl2.tBodies[0].rows;
+for(var i=0;i<rows.length;i++){
+	//rows[i].cells[0].style.textAlign="left";
+	rows[i].cells[1].style.textAlign="left";
+}
+//配置下载列表
+var Download=[
+	"all.rar",
+	"common.plugin.js",
+	"jquery.plugin.js",
+	"devtool.js",
+	"tool.js",
+	"validate.js"
+];
+//创建下载列表
+new function createDownloads(){
+	var oFragment=document.createDocumentFragment();
+	
+	for(var i=0,len=Download.length;i<len;i++){
+		var p=document.createElement("p"),
+		    input=document.createElement("input"),
+			label=document.createElement("label");
+		input.type="radio";
+		input.name="filename";
+		input.value=Download[i];
+		if(i==0)input.checked=true;
+		//a.href="#";
+
+		label.innerHTML=Download[i];
+		p.appendChild(input);
+		p.appendChild(label);
+		oFragment.appendChild(p);
+	}
+
+	var t=document.getElementById("tempDiv");
+	t.parentNode.replaceChild(oFragment,t);
+};
+
+//下载表单提交
+function submitDownload(F){
+	
+}
+
+</script>
+</html>

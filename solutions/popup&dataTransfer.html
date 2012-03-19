@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出层内数据绑定</title>
+<style type="text/css">
+
+
+</style>
+<script>
+
+	/*获得表单控件显示的文字，规则如下：
+		radio/checkbox - 显示此控件后面的文字
+		select - 显示控件选中的文本
+		其它 - 返回value值
+		参数：sel--(HTMLSelectElement)
+		返回值：(String)*/
+	w.getControlText=function(obj){
+		if(!obj.length||obj.length==1){
+			obj=obj[0];
+			if(obj.tagName=="INPUT"){
+				switch(obj.type){
+					case "radio":
+					case "checkbox":
+					return obj.nextSibling.nodeValue||"";
+					default:
+					return obj.value;
+					
+				};
+			}else if(obj.tagName=="SELECT"){
+				return getSelectedText(obj);//depends on tools.js
+			}else{
+				return obj.value;
+			}
+			
+		}else{
+			var txtArr=[];
+			for(var i=0;i<obj.length;i++){
+				if(obj[i].checked){
+					txtArr.push(obj[i].nextSibling.nodeValue);
+				}
+			}
+			return txtArr.join(",");
+		}
+	}
+function popupDataTransfer(parentTable){
+	parentTable.find("[fieldname]").each(function(){
+		var name=this.getAttribute("fieldname");
+		if(j("[name='"+name+"']").parents("tr:first").is(":visible")){
+			j(this).parents("tr:first").show();
+			this.innerHTML=getControlText(document.getElementsByName(name));
+		}else{
+			j(this).parents("tr:first").hide();
+		}
+		
+	});
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

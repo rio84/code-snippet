@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS库演示</title>
+<link rel="stylesheet" type="text/css" href="../common/css/style.css" />
+<script src="../common/js/jquery-1.4.2.min.js"></script>
+<script src="../lib/all.js"></script>
+</head>
+<body>
+	<div class="page">
+		<script>$.ajax({url:"../nav.html",async:false,success:function(res){document.write(res);}});</script>
+		<div class="page_body">
+			<table cellspacing="0" cellpadding="0" class="main">
+				<tbody>
+					<tr>
+						<td class="main_left" onclick="handleClick()">
+							<dl class="left_menu">
+								<dt>common.plugin</dt>
+								<dd><a href="#">SortTable</a></dd>
+								<dd><a href="#">iSelect</a></dd>
+								<dd><a href="#">Marquee</a></dd>
+								<dd><a href="#">Calendar</a></dd>
+								<dd><a href="#">Menu</a></dd>
+								<dd><a href="#">adSlider</a></dd>
+								<dd><a href="#">Tab</a></dd>
+				
+								<dt>jquery.plugin</dt>
+								<dd><a href="#">inputNumber</a></dd>
+								<dd><a href="#">inputMoney</a></dd>
+								<dd><a href="#">allowpoint</a></dd>
+								<dd><a href="#">draggable</a></dd>
+								<dd><a href="#">resizable</a></dd>
+								<dd><a href="#">ellipsis</a></dd>
+
+								<dt><a href="#">validate</a></dt>
+
+								<dt>more...</dt>
+								<dd><a href="#">Matrix</a></dd>
+								<dd><a href="#">softKeyboard</a></dd>
+								<dd><a href="#">tree_node</a></dd>
+							</dl>
+
+						</td>
+						<td class="main_right">
+							<iframe id="demoContainer" src="SortTable/" frameborder=0></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</body>
+<script>
+var box=document.getElementById("demoContainer");
+function handleClick(){
+	var callor=this.handleClick.caller;
+	var e=window.event||callor.arguments[0];
+	var tar=e.target||e.srcElement;
+	if(tar.tagName=="A"){
+		var link=tar.innerHTML;
+		box.src=prefix+"demo/"+link+"/";
+		preventDefault(e);
+		return false;
+	}
+}
+
+
+</script>
+</html>

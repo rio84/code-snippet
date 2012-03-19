@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Select</title>
+
+	<style type="text/css">
+		ul,li{margin:0;padding:0;list-style:none;}
+		.sel{
+			background:url(sel.png) no-repeat right center; 
+			border:solid 1px #7F9DB9;
+			cursor:default;
+			font-family:宋体;
+			font-size:13px;
+		}
+		.hover{
+			background:url(sel-hover.png) no-repeat right center;
+		}
+		.opt{
+			background-color:#FFFFFF;
+			border:solid 1px #7F9DB9;
+			cursor:default;
+			font-family:宋体;
+			font-size:13px;
+		}
+		.opt li{
+			display:block;
+			text-indent:2px;
+			width:100%;
+		}
+		.opt li.now{
+			background-color:#316AC5;
+			color:#FFF;
+
+		}
+	</style>
+</head>
+
+<body>
+<div class="demo">
+<h2>iSelect</h2>
+<form autoComplete="Off">
+	<table>
+		<tr>
+			<td>字段一:</td>
+			<td><input type="text" /></td>
+		</tr>
+		<tr>
+			<td>原select:</td>
+			<td>
+				<select id="sel2">
+					<option value="1">上海市</option>
+					<option value="2">武汉市</option>
+					<option value="3">西安市</option>
+					<option value="4">广州</option>
+					<option value="5">eeeeeeeeeeeeee</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>自定义select:</td>
+			<td>
+				<select id="sel" name="sel" onchange="printOut('changing..')">
+					<option value="1">上海市</option>
+					<option value="2">武汉市</option>
+					<option value="3">西安市</option>
+					<option value="4">广州</option>
+					<option value="5">eeeeeeeeeeeeee</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="button" value="获得当前选择值" onclick="test()" /></td>
+		</tr>
+	</table>
+
+</form>
+
+</div>
+
+</body>
+
+<script type="text/javascript" src="../../lib/common.plugin.js"></script>
+<script type="text/javascript" src="../../lib/devtool.js"></script>
+<script type="text/javascript">
+
+var sl=document.getElementById("sel");
+var s2=document.getElementById("sel2");
+
+
+var se=new iSelect(sl);
+
+
+function test(){
+	alert(se.val());
+};
+
+se.selectedIndex(2);
+
+
+</script>
+</html>

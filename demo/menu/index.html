@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Menu Demo</title>
+<meta name="content-type" content="text/html; charset=utf-8">
+<script src="../../lib/tool.js"></script>
+<script src="../../lib/devtool.js"></script>
+<link rel="stylesheet" type="text/css" href="menu.css"  />
+<script src="menu.js"></script>
+<style>
+#menuContainer{}
+.路人甲{
+	background-color:#Fcc;
+	height:200px;
+}
+</style>
+</head>
+
+<body>
+	<h3>菜单控件</h3>
+	<div id="menuContainer">
+		
+	</div>
+	<div class="路人甲"><br/><br/><br/><br/><br/>路人~<br/>路人~sss =3=<br/><br/><br/>
+		<input type="button" onclick="test()" value="生成菜单" />
+	</div>
+</body>
+
+<script>
+var Json=[
+	{ name:"File",child:[
+		{ name:"File1",child:[
+			{ name:"File1_1",child:[
+				{ name:"File1_1_1"},{ name:"File1_1_2"},{ name:"File1_1_3"}
+			]},{ name:"File1_2",child:[
+		
+			]},{ name:"File1_3",child:[
+		
+			]}
+		]},
+		{ name:"File2",child:[
+			{ name:"File2_1",child:[
+				{ name:"File2_1_1"},{ name:"File2_1_2"},{ name:"File2_1_3"}
+			]},{ name:"File2_2",child:[ { name:"File2_2_1",child:[
+		
+			]}
+		
+			]}
+		]},
+		{ name:"File3"}
+	]},
+	{ name:"Edit",child:[
+		{ name:"Edit1",child:[
+			{ name:"Edit1_1",child:[
+		
+			]},{ name:"Edit1_2",child:[
+		
+			]},{ name:"Edit1_3",child:[
+		
+			]}
+		]},
+		{ name:"Edit2",child:[
+			{ name:"Edit2_1",child:[
+		
+			]},{ name:"Edit2_2",child:[
+		
+			]},{ name:"Edit2_3",child:[
+		
+			]}
+		]},
+		{ name:"Edit3",child:[
+			{ name:"Edit3_1",child:[
+		
+			]},{ name:"Edit3_2",child:[
+		
+			]},{ name:"Edit3_3",child:[
+		
+			]}
+		]}
+	]},
+	{ name:"View",child:[
+		{ name:"View1_1",child:[
+	
+		]},{ name:"View1_2",child:[
+			{ name:"View1_2_1",child:[
+	
+			]}
+		]}
+	]},
+	{ name:"Window",
+		child:[
+			{name:"Win_1"},{name:"Win_2"},{name:"Win_3"}	
+		]
+	}
+];
+
+var menu=new Menu(document.getElementById("menuContainer"));
+menu.config({autoHide:1000});
+function test(){
+
+	
+	menu.init(Json);
+	menu.onSelect=function(value){
+		alert(value);
+	}
+
+}
+</script>
+</html>

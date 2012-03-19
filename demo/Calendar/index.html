@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calendar</title>
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/all.js"></script>
+<script src="../../lib/My97DatePicker/WdatePicker.js"></script>
+<style>
+td{
+	font-size:14px;
+	padding-top:15px;
+}
+</style>
+</head>
+<body>
+	<div class="demo">
+		<h2>Calendar</h2>
+	  <div class="search_table">
+      <table border="0" cellspacing="0" cellpadding="0"> 		
+        
+        <tr>
+          <td width="100">单个时间</td>
+          <td colspan="3"><input type="text" class="Wdate" id="d412" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2008-01-01 00:00:00'})" value=""/>
+            
+            </td>
+          </tr>
+        <tr>
+          <td>单个日期</td>
+          <td colspan="3"><input type="text" class="Wdate" id="d413" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',minDate:'2008-01-01 00:00:00'})" value=""/></td>
+          </tr>
+        <tr>
+          <td>日期</td>
+          <td colspan="3"><input id="date_from" class="Wdate" type="text" onFocus="WdatePicker({skin:'whyGreen',maxDate:'#F{$dp.$D(\'date_to\')||\'2020-10-01\'}'})"/> 
+            <input id="date_to" class="Wdate" type="text" onFocus="WdatePicker({skin:'whyGreen',minDate:'#F{$dp.$D(\'date_from\')}',maxDate:'2020-10-01'})"/></td>
+          </tr>
+        <tr>
+          <td>时间</td>
+          <td colspan="3">从 <input id="time_form" class="Wdate" type="text" onFocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'time_to\')||\'2020-10-01\'}'})"/> 
+            到 <input id="time_to" class="Wdate" type="text" onFocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'time_form\')}',maxDate:'2020-10-01'})"/></td>
+          </tr>
+        </table>
+    </div>
+</div>
+	<script>//调整日期控件样式
+	$(".Wdate").after("<span class='Wdate2'></span>");
+	</script>
+</body>
+</html>

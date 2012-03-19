@@ -1,0 +1,3 @@
+#一个plugin必须包含以下方法:
+destroy - 清除
+refresh - 重新绑数据后刷新

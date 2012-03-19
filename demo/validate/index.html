@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS库-表单验证演示</title>
+<script src="../../common/js/jquery-1.4.2.min.js"></script>
+<script src="../../lib/validate.js"></script>
+<style>
+p{
+	text-align:center;
+}
+.section_table{
+	font-size:12px;
+	width:100%;
+}
+.section_table p{
+	text-align:left;
+}
+.section_table th{
+	padding-right:10px;
+	padding-top:10px;
+	text-align:right;
+	vertical-align:top;
+	width:130px;
+}
+.section_table td{
+	border-bottom:solid 1px #CCC;
+	padding-top:10px;
+}
+.section_table i{
+	color:red;
+	display:inline-block;
+	font-style:normal;
+	width:14px;
+}
+.tip_error{
+	color:red;
+	font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="demo">
+	<h2>validate</h2>
+	<form onsubmit="if(!validateForm(this)){return false;}">
+		<div class="section_list_table">
+			<table cellspacing="0" cellpadding="0" class="section_table">
+				<tr>
+					<th><i></i>姓名 </th>
+					<td><input cnonly="请输入中文" size="20" />
+					<span class="_tip"></span>
+					<p>请输入中文</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>文字，不要符号 </th>
+					<td><input charonly="请输入文字，不要符号" size="20" />&nbsp;
+					<span class="_tip"></span>&nbsp;<p>文字，不要符号</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>搜索关键字 </th>
+					<td>
+					<input exceptkey="不允许输入，" except="，" size="20" />&nbsp;
+					<span class="_tip"></span>&nbsp;<p>禁止自定义的符号</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>上传图片 </th>
+					<td>
+					<input filefilter="png|jpg|gif" type="file" size="20" />
+					<span class="_tip"></span>
+					<p>支持格式png,jpg,gif</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>域名 </th>
+					<td><input domain="请输入正确的域名" size="20" />
+					<span class="_tip"></span>
+					<p>请输入域名</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>确认金额 </th>
+					<td>
+					<input emptykey="请输入" gt="10" lt="100" ltkey="太大" gtkey="太小" numberonly="请输入正整数" type="text" size="10" /> 
+					元 <span class="_tip"></span>
+					<p>请输入正整数</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>收款账号</th>
+					<td>
+					<input name="input" type="text" numberonly="请输入数字" size="20" />
+					<span class="_tip"></span>
+					<p>请输入数字</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i> 用户名</th>
+					<td>
+					<input type="text" minlength="6" shortkey="用户名长度太短" wordonly="只允许数字或英文字母" size="20" maxlength="20" />&nbsp;
+					<input type="button" value="检测" />&nbsp;
+					<span class="_tip"></span>
+					<p>请输入6-20之间的数字或英文字母</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i> 密码</th>
+					<td>
+					<input type="password" id="ptpwd" name="ssss" samekey="两次输入密码不一致" emptykey="请确认你输入的密码" minlength="6" shortkey="密码长度太短" pswkey="密码应该由字母＋数字组成" wordonly="只允许数字或英文字母" size="20" maxlength="20" />
+					<span class="_tip"></span>
+					<p>请输入6-20之间的数字或英文字母</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i> 重复密码</th>
+					<td>
+					<input type="password" id="ptpwd2" name="ssddd" samekey="两次输入密码不一致" emptykey="请确认你输入的密码" minlength="6" shortkey="密码长度太短" pswkey="密码应该由字母＋数字组成" wordonly="只允许数字或英文字母" size="20" maxlength="20" />
+					<p>请输入登录/支付密码</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>售玩家单价</th>
+					<td>
+					<input type="text" allowpoint="3" moneyonly="请输入一个数字，支持小数点后３位" size="10"> 
+					元&nbsp; <span class="_tip"></span>&nbsp;&nbsp;&nbsp;
+					<span class="font_orange_normal">参考售价 9.0元</span>
+					<p class="font_gray_normal">支持小数点后3位，准确填写有助于设置销售价格、统计销售利润</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>购买数量</th>
+					<td>
+					<input type="text" numberonly="请填写正整数" size="10"> 张&nbsp;&nbsp; 
+					<span class="_tip"></span>&nbsp;<p>请填写正整数</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>输入邮箱 </th>
+					<td>
+					<input emptykey="请输入" email="请输入正确邮箱地址" type="text" size="20" />
+					<span class="_tip"></span>
+					<p>邮箱地址验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>输入邮箱 </th>
+					<td>
+					<input emptykey="请输入" emails="请输入正确邮箱地址" type="text" size="40" />
+					<span class="_tip"></span>
+					<p>邮箱地址验证，可输入多个以,隔开</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>手机号码 </th>
+					<td>
+					<input mobile="请输入正确手机号码" type="text" size="20" />
+					<span class="_tip"></span>
+					<p>手机号码验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i></i>电话号码 </th>
+					<td>
+					<input telephone="请输入正确电话号码" type="text" size="20" />
+					<span class="_tip"></span>
+					<p>电话号码验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>电话号码 </th>
+					<td>
+					<input emptykey="ss" telephones="请输入正确电话号码" type="text" size="40" />
+					<span class="_tip"></span>
+					<p>多个电话号码验证，可输入多个以,隔开</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>身份证 </th>
+					<td>
+					<input emptykey="请输入" idcard="身份证号码验证失败" type="text" size="40" />
+					<span class="_tip"></span>
+					<p>身份证号码验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>输入IP地址 </th>
+					<td>
+					<input emptykey="请输入" ipaddress="请输入正确IP地址" type="text" size="40" />
+					<span class="_tip"></span>
+					<p>IP地址验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>QQ号码 </th>
+					<td>
+					<input emptykey="请输入" qq="请输入正确QQ号码" type="text" size="20" /><span class="_tip"></span>
+					<p>QQ号码验证</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>QQ号码</th>
+					<td>
+					<input emptykey="请输入" qqs="请输入正确QQ号码" type="text" size="40" />
+					<span class="_tip"></span>
+					<p>QQ号码验证，可输入多个以,隔开</p>
+					</td>
+				</tr>
+				<tr>
+					<th><i>*</i>备注</th>
+					<td>
+					<textarea emptykey="请输入提现事由" charfilter="不能含有+*\|^?$'%&lt;&gt;特殊字符" cols="45" rows="4"></textarea>
+					<span class="_tip"></span>
+					<p>不能为空,不能含有+*\|^?$&#39;%&lt;&gt;特殊字符</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><input type="submit" value="确 认" /><input style="margin-left: 40px;" type="reset" value="重 置" /></p>
+	</form>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS库使用规范</title>
+<link rel="stylesheet" type="text/css" href="common/css/style.css" />
+<script src="common/js/jquery-1.4.2.min.js"></script>
+<script src="lib/all.js"></script>
+</head>
+<body>
+	<div class="page">
+		<script>$.ajax({url:"nav.html",async:false,success:function(res){document.write(res);}});</script>
+	
+		<div class="page_body">
+			<div class="doc">
+				<h2>◆JS库FAQ</h2>
+				<p>
+					1.这是什么东东？<br/>
+					Javascript（简称ＪＳ）库，指的是可以方便应用到现有开发体系中的、现成的代码资源。库不仅为大部分日常的DOM脚本编程工作提供了快捷的解决方案，而且也提供了许多独特的工具。
+				</p>
+				<p>
+					2.建库出于何种目的？
+					<br/>对项目中开发的可能公用的ＪＳ代码进行整理，保存，便于在后来的项目开发中直接调用，减少开发成本，提高开发效率。这要求ＪＳ代码封装良好，有一定的可重用性
+				</p>
+				<p>
+					3.目前有哪些内容？
+					<br/>目前主要整理有开发中常用的一些方法，统称工具(tool)，JS开发的调试工具(devtool)，封装了一些类组件(common.plugin)，一些jQuery组件(jquery.plugin)，表单验证框架(validate)等。其它还包括各个项目中特有的一些功能模块。
+				</p>
+				<p>
+					4.基于jQuery吗？
+					<br/>jQuery插件是库的一部分
+				</p>
+
+			</div>
+			<div class="doc">
+				<h2>◆经验分享</h2>
+				<h3>JS向页面写入html</h3>
+				<p>
+					在页面初始化时，很难初始化这些代码。应写
+				</p>
+				<h3>关于ajax</h3>
+				<p>
+					ajax方式在实现页面无刷新的交互具有优势，但初始化页面
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

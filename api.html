@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS库API文档</title>
+<link rel="stylesheet" type="text/css" href="common/css/style.css" />
+<script src="common/js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<div class="page">
+	<script>$.ajax({url:"nav.html",async:false,success:function(res){document.write(res);}});</script>
+	<div class="page_body">
+	<h1>JS库API文档</h1>
+	<div class="library">
+		<h2 class="title"><input type="button" class="btn_toggle" value="" />tool</h2>
+		<div class="list">
+			<dl class="function">
+				<dt>contains(a,b)</dt>
+				<dd>判断两个一个元素是否包含另一元素</dd>
+				<dd><label>参数：</label>a - 容器(HTMLElement)
+					<br/>b - 被包含元素(HTMLElement)
+				</dd>
+				<dd><label>返回：</label>(Boolean)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>cancelBubble(e)</dt>
+				<dd>事件停止起泡</dd>
+				<dd><label>参数：</label>e - 事件对象(Object)
+				</dd>
+				<dd><label>返回：</label>undefined</dd>
+				<dd><label>备注：</label>在标签中直接使用 <b>onclick="cancelBubble()"</b> 无须传参</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>preventDefault(e)</dt>
+				<dd>阻止浏览器默认行为</dd>
+				<dd><label>参数：</label>e - 事件对象(Object)
+				</dd>
+				<dd><label>返回：</label>false</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>renderCss(elem,css)</dt>
+				<dd>获得渲染的样式</dd>
+				<dd><label>参数：</label>elem - (HTMLElement)<br/>css - (String)样式名
+				</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>getKeyType(e)</dt>
+				<dd>通过keyCode判断当前键盘输入的字符类型</dd>
+				<dd>
+					<label>参数：</label>e - 事件对象(Object)
+				</dd>
+				<dd><label>返回：</label>0 - 不是符号<br/>
+					1 - 字母<br/>
+					2 - 数字<br/>
+					3 - 其它符号
+				</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>getPos(elem)</dt>
+				<dd>获得文本框中光标位置的索引值</dd>
+				<dd><label>参数：</label>elem - 文本框对象(HTMLInputElement)</dd>
+				<dd><label>返回：</label>(Number)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>getAttributes(elem)</dt>
+				<dd>获得元素已定义的所有属性</dd>
+				<dd><label>参数：</label>elem - (HTMLElement)</dd>
+				<dd><label>返回：</label>(Array)JSON,形式如[{name:***,value:***},{name:***,value:***},...]</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>getSelectedText(sel)</dt>
+				<dd>获得SELECT当前选择项的文本</dd>
+				<dd><label>参数：</label>sel - (HTMLSelectElement)</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>trim(s)</dt>
+				<dd>去掉字符串中开始和结束的空格</dd>
+				<dd><label>参数：</label>s-(String)</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>byteLength(s)</dt>
+				<dd>计算字符串的字节大小，一个中文算两个字节</dd>
+				<dd><label>参数：</label>s - (String)</dd>
+				<dd><label>返回：</label>(Number)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>queryString(name)</dt>
+				<dd>取得ＵＲＬ的参数</dd>
+				<dd><label>参数：</label>name - 参数名(String)</dd>
+				<dd><label>返回：</label>(String)|null</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>cookie(name,value,options)</dt>
+				<dd>cookie操作</dd>
+				<dd><label>参数：</label>
+					name - (String)cookie键名<br/>
+					value - (String)|undefind|null => 设置cookie值|获得cookie值|删除cookie<br/>
+					options - (Object)可选项，设置cookie的expires,path,domain,secure等。如:{expires:day,path:"/",domain:"XXX.com",secure:"secure"}
+				</dd>
+				<dd><label>返回：</label>(String)|undefind|undefind</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>copyToClipboard(txt)</dt>
+				<dd>复制到剪贴板</dd>
+				<dd><label>参数：</label>txt - 所复制的内容</dd>
+				<dd><label>返回：</label>undefind</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>addFavorite()</dt>
+				<dd>收藏本站</dd>
+				<dd><label>参数：</label></dd>
+				<dd><label>返回：</label></dd>
+			</dl>
+
+			<dl class="function">
+				<dt>setHome(url)</dt>
+				<dd>设为首页</dd>
+				<dd><label>参数：</label>url - 要收藏的地址，可选参数，默认为当前页面地址</dd>
+				<dd><label>返回：</label></dd>
+			</dl>
+
+			<dl class="function">
+				<dt>serializeForm(F,separator)</dt>
+				<dd>序列化表单</dd>
+				<dd><label>参数：</label>F - (HTMLFormElement)表单对象<br/>separator - (String)多选项checkbox;多个值间的分隔字符</dd>
+				<dd><label>返回：</label>(Object) {name:value,name:value}</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>addClass(elem,cname)</dt>
+				<dd>为元素添加样式类</dd>
+				<dd><label>参数：</label>elem - 元素(HTMLElement)<br/>cname - 样式类名(String)</dd>
+				<dd><label>返回：</label>(HTMLElement)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>removeClass(elem,cname)</dt>
+				<dd>为元素移除一个样式类</dd>
+				<dd><label>参数：</label>elem - 元素(HTMLElement)<br/>cname - 样式类名(String)</dd>
+				<dd><label>返回：</label>(HTMLElement)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>addEvent(elem,type,fn)</dt>
+				<dd>为元素添加事件</dd>
+				<dd>
+					<label>参数：</label>
+					elem - 元素(HTMLElement)<br/>
+					type - 事件类型(String)，如：mouseover,click,keyup等<br/>
+					fn - 事件执行的函数
+				</dd>
+				<dd><label>返回：</label>(HTMLElement)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>removeEvent(elem,type,fn)</dt>
+				<dd>为元素移除事件</dd>
+				<dd>
+					<label>参数：</label>
+					elem - 元素(HTMLElement)<br/>
+					type - 事件类型(String)，如：mouseover,click,keyup等<br/>
+					fn - 事件执行的函数
+				</dd>
+				<dd><label>返回：</label>(HTMLElement)</dd>
+			</dl>
+			
+			<dl class="function">
+				<dt>getIndex(elem)</dt>
+				<dd>获得元素在相同标签中的索引</dd>
+				<dd>
+					<label>参数：</label>
+					elem - 元素(HTMLElement)
+				</dd>
+				<dd><label>返回：</label>(Number)</dd>
+			</dl>
+
+		</div>
+		<!--/div.list-->
+	</div>
+	<!--/div.library-->
+
+	<div class="library">
+		<h2 class="title"><input type="button" class="btn_toggle" value="" />devtool</h2>
+		<div class="list">
+			<dl class="function">
+				<dt>printOut(s)</dt>
+				<dd>在页面上打印一个字符串</dd>
+				<dd><label>参数：</label>s - (Object)|(Array)|UNKNOWN</dd>
+				<dd><label>返回：</label>{name:value,name:value,...}|[value,value,...]|s.toString</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>printObject(obj)</dt>
+				<dd>将对象转换成键值对形式的字符串</dd>
+				<dd><label>参数：</label>obj--对象(Object)</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>printString(s)</dt>
+				<dd>以双引号包含当前字符串输出</dd>
+				<dd><label>参数：</label>s--(String)</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>printTimespan(fn,args)</dt>
+				<dd>查看一个函数的运行时间</dd>
+				<dd><label>参数：</label>fn--(Function)</dd>
+				<dd><label>返回：</label>args--(Array)给函数传递的参数</dd>
+			</dl>
+		</div>
+		<!--/div.list-->
+	</div>
+	<!--/div.library-->
+
+	<div class="library">
+		<h2 class="title"><input type="button" class="btn_toggle" value="" />jquery.plugin</h2>
+		<div class="list">
+			<p>以下为对jquery扩展的方法。用法如: $("#div1").draggable(options) 的形式。</p>
+			<dl class="function">
+				<dt>inputNumber()</dt>
+				<dd>限制输入框只允许输入数字</dd>
+				<dd><label>参数：</label></dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>inputMoney()</dt>
+				<dd>限制输入框只允许输入带小数点的值</dd>
+				<dd><label>参数：</label></dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>allowpoint()</dt>
+				<dd>限制输入框允许输入小数点后几位</dd>
+				<dd><label>说明：</label>输入框<b>allowpoint</b>设置值为允许小数点后的位数，默认为3位</dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>selectedText()</dt>
+				<dd>获得select选中文本</dd>
+				<dd><label>用法：</label>var txt=$("#select1").selectedText();</dd>
+				<dd><label>返回：</label>(String)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>draggable(options)</dt>
+				<dd>让页面上元素实现拖动，此元素的样式属性<b>position</b>值必须为<b>absolute</b>或<b>fixed</b></dd>
+				<dd><label>参数：</label>options - {<br/>
+						container:(jQuery Object)容纳被拖动元素的容器，拖动时不能超越此容器，默认为父容器<br/>
+						handler:(jQuery selector)元素内用于拖动的把柄，默认为自身<br/>
+						keyadjust:(Boolean)是否允许键盘进行位置微调，默认为true<br/>
+						allowbubble:(Boolean)是否起泡 即对象中子元素可否被点击<br/>
+						}
+				</dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>resizable(options)</dt>
+				<dd>让页面上元素可以通过拖动改变大小，此元素的样式属性position值必须为absolute</dd>
+				<dd><label>参数：</label>options - {<br/>
+						container:(jQuery Object)容纳被拖动元素的容器，拖动时大小不能超越此容器，默认为父容器<br/>
+						minHeight:(Number)最小高度<br/>
+						minWidth:(Number)最大宽度<br/>
+						}
+				</dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+			</dl>
+
+			<dl class="function">
+				<dt>ellipsis(limitWidth)</dt>
+				<dd>用于使页面上的行级元素如a,span,nobr内的文字超过固定宽度后，多余文字省略，并以“...”结尾</dd>
+				<dd><label>参数：</label>limitWidth - (Number)限制宽度值(px)</dd>
+				<dd><label>返回：</label>(jQuery Object)</dd>
+				<dd><label>用法：</label>$("selector nobr").ellipsis(300);传入参数为宽度。</dd>
+				<dd><label>备注：</label>为了最大限度的减少浏览器差异，建议包裹文字的标签为NOBR，防止因自动换行引起的错误。</dd>
+			</dl>
+		</div>
+		<!--/div.list-->
+	</div>
+	<!--/div.library-->
+
+	<div class="library">
+		<h2 class="title"><input type="button" class="btn_toggle" value="" />common.plugin</h2>
+		<div class="list">
+			<div class="class">
+				<h3>SortTable 类</h3>
+				<p>可排序表格，支持多个字段</p>
+				<dl class="function">
+					<dt>SortTable(tbody,fieldIndex,isString)</dt>
+					<dd>构造方法</dd>
+					<dd><label>参数：</label>tbody - (HTMLTbodyElement)<br/>
+						fieldIndex - (Number)排序字段所有列的索引，默认为0<br/>
+						isString - (Boolean)是否按字符进进行比较排序，默认为false
+					</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>sort(reverse)</dt>
+					<dd>排序</dd>
+					<dd><label>参数：</label>reverse - (Boolean) 排序是否与默认的颠倒</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>onSort</dt>
+					<dd>(Function)排序完成后触发的方法</dd>
+				</dl>
+			</div>
+			<!--/div.class-->
+			
+			<div class="class">
+				<h3>iSelect 类</h3>
+				<p>自定义下拉框，把页面上原有的下拉框改造成自定义的。</p>
+				<dl class="function">
+					<dt>iSelect(src)</dt>
+					<dd>构造方法</dd>
+					<dd><label>参数：</label>src - (HTMLSelectElement) 原下拉框</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>val(value)</dt>
+					<dd>设置/获取当前选择值</dd>
+					<dd><label>参数：</label>value - (String)|undefind =>设置｜取</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>selectedIndex(index)</dt>
+					<dd>设置/获取当前选择索引</dd>
+					<dd><label>参数：</label>index - (Number)|undefind =>设置｜取</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>onChange</dt>
+					<dd>(Function) 当选择值时，触发的方法</dd>
+					<dd><label>说明：</label>可以设置新的方法，默认为执行原下拉框标签设置的onchange事件</dd>
+				</dl>
+			</div>
+			<!--/div.class-->
+
+			<div class="class">
+				<h3>Marquee 类</h3>
+				<p>轮播/翻滚/跑马灯</p>
+				<pre>
+页面HTML结构要求：
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;
+			&lt;!---　此处为滚动的内容　--&gt;
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+				</pre>
+
+				<dl class="function">
+					<dt>Marquee()</dt>
+					<dd>构造方法</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>init(roll_speed,roll_distance,roll_width,roll_element,auto_time)</dt>
+					<dd>初始化</dd>
+					<dd><label>参数：</label>roll_speed  - 动画执行一次滚动的时间间隔(ms)，越小越快。参考值：10-50<br/>
+						roll_distance - 动画执行一次滚动的距离(px)，越大越快。参考值：1-10<br/>
+						roll_width - 滚动可见区域宽度(px)<br/>
+						roll_element - 滚动的对象(HtmlTableElement)<br/>
+						auto_time - 滚动一屏的时间间隔(ms)<br/>
+					</dd>
+					<dd><label>返回：</label>undefined</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>roll_left()</dt>
+					<dd>向左滚动一屏</dd>
+					<dd><label>返回：</label>undefined</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>roll_right()</dt>
+					<dd>向右滚动一屏</dd>
+					<dd><label>返回：</label>undefined</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>auto_play(dirc)</dt>
+					<dd>开始自动滚动</dd>
+					<dd><label>参数：</label>dirc  - "left"|"right" => 向左|向右
+					</dd>
+					<dd><label>返回：</label>undefined</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>loop</dt>
+					<dd>(Boolean) 是否循环滚动</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>direction</dt>
+					<dd>(String) 滚动方向。"x"|"y" => 横向|纵向;</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>end_right_func</dt>
+					<dd>(Function) 非循环滚动，向右滚动到最右边时触发的方法</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>end_left_func</dt>
+					<dd>(Function) 非循环滚动，向左滚动到最左边时触发的方法</dd>
+				</dl>
+			</div>
+			<!--/div.class-->
+			
+			<div class="class">
+				<h3>Canlendar 类</h3>
+				<p>日历</p>
+				<dl class="function">
+					<dt>Canlendar()</dt>
+					<dd>构造方法</dd>
+					<dd><label>参数：</label></dd>
+					<dd><label>返回：</label></dd>
+				</dl>
+			</div>
+			<!--/div.class-->
+			
+			<div class="class">
+				<h3>AdSlider 类</h3>
+				<p>广告轮播</p>
+				<dl class="function">
+					<dt>AdSlider(tabbox,contentbox,currentIndex)</dt>
+					<dd>构造方法</dd>
+					<dd><label>参数：</label>tabbox - 用于切换的菜单容器(HTMLElement)
+						<br/>contentbox - 内容容器(HTMLElement)
+						<br/>currentIndex - 当前选择的索引，默认为0(Number)
+					</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>goNext()</dt>
+					<dd>向后翻滚</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>goPrev()</dt>
+					<dd>向前翻滚</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>goIndex(index) </dt>
+					<dd> 翻滚到指定的索引</dd>
+					<dd>
+						<label>参数：</label>index - 指定的索引(Number)
+					</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>pause()</dt>
+					<dd>暂停</dd>
+				</dl>
+
+				<dl class="function">
+					<dt>autoGo(delay) </dt>
+					<dd> 开始自动播放</dd>
+					<dd>
+						<label>参数：</label>delay - 自动切换的时间间隔，默认为 3*1000(ms)
+					</dd>
+				</dl>
+			</div>
+
+		</div>
+		<!--/div.list-->
+	</div>
+	<!--/div.library-->
+
+	<div class="library">
+		<h2 class="title"><input type="button" class="btn_toggle" value="" />validate</h2>
+		<div class="list">
+			<div class="class">
+				<h3>ValidateMethods 对象</h3>
+				<p>方法返回值: true - 通过验证;false - 未通过验证</p>
+				<p>用法：ValidateMethods.emptykey.call(elem);<br/>参数：elem为需要验证的HTMLElement对象</p>
+				<dl class="function">
+					<dt>emptykey</dt>
+					<dd>验证空值</dd>
+			
+					<dt>shortkey</dt>
+					<dd>验证输入字符长度不小于<b>minlength</b>属性设置的值</dd>
+			
+					<dt>longkey</dt>
+					<dd>验证输入字符长度不大于<b>maxlength</b>属性设置的值</dd>
+
+					<dt>minkey</dt>
+					<dd>验证输入数字不小于<b>min</b>属性设置的值</dd>
+
+					<dt>maxkey</dt>
+					<dd>验证输入数字不大于<b>max</b>属性设置的值</dd>
+
+					<dt>ltkey</dt>
+					<dd>输入数字要小于<b>lt</b>属性设置的值</dd>
+				
+					<dt>gtkey</dt>
+					<dd>输入数字要大于<b>gt</b>属性设置的值</dd>
+
+					<dt>numberonly</dt>
+					<dd>只允许数字</dd>
+
+					<dt>wordonly</dt>
+					<dd>只允许字母和数字</dd>
+
+					<dt>moneyonly</dt>
+					<dd>只允许浮点型数字</dd>
+
+					<dt>cnonly</dt>
+					<dd>只允许中文字符</dd>
+
+					<dt>charonly</dt>
+					<dd>允许输入中文、字母和数字</dd>
+
+					<dt>email</dt>
+					<dd>验证email</dd>
+
+					<dt>emails</dt>
+					<dd>验证多个email，以","隔开</dd>
+
+					<dt>telephone</dt>
+					<dd>验证电话号码</dd>
+
+					<dt>telephones</dt>
+					<dd>验证多个电话号码，以","隔开</dd>
+
+					<dt>mobile</dt>
+					<dd>验证手机号</dd>
+
+					<dt>mobiles</dt>
+					<dd>验证多个手机号，以","隔开</dd>
+
+					<dt>qq</dt>
+					<dd>验证QQ号码，支持邮箱地址</dd>
+
+					<dt>qqs</dt>
+					<dd>验证多个QQ号码，以","隔开，支持邮箱地址</dd>
+
+					<dt>ip</dt>
+					<dd>IP地址验证</dd>
+
+					<dt>idcard</dt>
+					<dd>身份证号码验证</dd>
+
+					<dt>charfilter</dt>
+					<dd>过滤特殊字符 +*\|^?$'%<> </dd>
+
+					<dt>pswkey</dt>
+					<dd>输入内容为字母和数字的组合（用于密码判断）</dd>
+
+					<dt>domain</dt>
+					<dd>验证域名</dd>
+
+					<dt>filefilterkey</dt>
+					<dd>验证文件名，<b>filefilter</b>属性设置格式如"png|gif|jpg"</dd>
+
+					<dt>exceptkey</dt>
+					<dd>禁止输入<b>except</b>属性设置的符号</dd>
+				</dl>
+			</div>
+			<!--/div.class-->
+			
+		</div>
+		<!--/div.list-->
+	</div>
+	<!--/div.library-->
+
+	</div>
+	<!--/div.page_body-->
+</div>
+</body>
+<script>
+	$("div.library").click(function(e){
+		var tar=e.target||window.event;
+		if(/\bbtn_toggle\b/.test(tar.className)){
+			if(this.className.indexOf(" open")<0){
+				this.className+=" open";
+			}else{
+				this.className=this.className.replace(" open","");
+			}
+			tar.blur();
+		}
+	});
+	function unexpand(elem){
+		var elem=elem.parentNode.parentNode.parentNode;
+		elem.className=elem.className.replace(" open","")
+	}
+	$("div.list").each(function(){
+		$(this).append('<p style="text-align:right"><input type="button" value="↑收起" onclick="unexpand(this)" /></p>');
+	});
+</script>
+</html>
